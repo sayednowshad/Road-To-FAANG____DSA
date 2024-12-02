@@ -1,0 +1,32 @@
+class Solution {
+    public Pair<Long, Long> getMinMax(int[] arr) {
+        // Code Here
+        
+//       long min = arr[0];
+//       long max = arr[0];
+       
+//       for(int num : arr){
+           
+//           if(num < min){
+               
+//             min = num;
+//           }
+//           if(num > max){
+               
+//               max = num;
+//           }
+//       }
+//   return new Pair<>(min,max);
+
+        // int min = Arrays.stream(arr).min().getAsInt();
+        
+        int min = Arrays.stream(arr).min().getAsInt();
+        
+        int max = Arrays.stream(arr).max().getAsInt();
+
+    // return new Pair<>((long) min, (long) max);
+    
+    return new Pair<>((long) min, (long) max);
+        
+    }
+}
