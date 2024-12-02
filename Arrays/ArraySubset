@@ -1,0 +1,27 @@
+class Compute {
+    public String isSubset( long a1[], long a2[], long n, long m) {
+        
+        
+        for(int i = 0 ; i < m ; i++){
+            
+            boolean found = false;
+            
+            for(int j = 0 ; j < n ; j++){
+                
+                if(a2[i] == a1[j]){
+                    
+                    found = true;
+                    a1[j] = Long.MIN_VALUE;
+                    break;
+                }
+            }
+            
+            if(!found){
+                
+                return "No";
+            }
+        }
+        return "Yes";
+        
+    }
+}
