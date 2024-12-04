@@ -1,0 +1,25 @@
+class Solution {
+    public List<Integer> findDuplicates(int[] arr) {
+        // code here
+        
+        ArrayList<Integer> dupli = new ArrayList<>();
+        
+        int size = arr.length;
+    
+       Arrays.sort(arr);
+       
+        for(int i = 1 ; i < size ; i++){
+            
+            if(arr[i] == arr[i-1]){
+                
+              if(dupli.isEmpty() || dupli.get(dupli.size() -1) != arr[i]){
+                  
+                  dupli.add(arr[i]);
+                }
+                
+            }
+        }
+        
+        return dupli;
+    }
+}
