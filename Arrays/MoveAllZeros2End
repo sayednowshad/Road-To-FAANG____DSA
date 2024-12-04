@@ -1,0 +1,41 @@
+
+
+class Solution {
+    void pushZerosToEnd(int[] arr) {
+        // code here
+        int size = arr.length;
+        
+        int[] Org_arr =  new int[size];
+        
+        int pos = 0 ;
+        
+        for(int i = 0 ; i < size ; i++){
+            
+            if(arr[i] != 0 ){
+                
+                Org_arr[pos++] = arr[i];
+            }
+        }
+        
+    //     for(int i = pos ; i < size ; i++){
+            
+    //         Org_arr[pos++] = arr[i];
+    //     }
+        
+    //     for(int i = 0 ; i < size ; i++){
+            
+    //          Org_arr[i] = arr[i];
+    // }
+    
+    while(pos < size){
+        
+        
+        Org_arr[pos++] = 0;
+    }
+    
+    for(int i = 0  ; i < size ; i++){
+        
+        arr[i] = Org_arr[i];
+    }
+}
+}
