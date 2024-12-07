@@ -1,0 +1,34 @@
+class Solution {
+    public static int numberofElementsInIntersection(int a[], int b[]) {
+        
+        
+        int a1 = a.length;
+        int b1 = b.length;
+     
+     int count = 0 ;
+     
+        int i = 0 ;
+        
+        while( i < a1 ){
+            
+            int j = 0 ;
+            
+                while(j < b1){
+                    
+                    if(a[i] == b[j]){
+                            
+                        count ++;
+                        
+                        b[j] = Integer.MAX_VALUE;
+                        
+                        break;
+                }
+                    
+                    j++;
+            }
+                i++;
+        }
+        return count;
+    }
+    
+}
