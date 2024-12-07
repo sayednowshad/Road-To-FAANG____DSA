@@ -1,0 +1,70 @@
+class Solution {
+    static ArrayList<Integer> leaders(int arr[]) {
+        // code here
+        
+        // ArrayList<Integer> result = new ArrayList<>(); // this is why because result we are storing this
+        
+        
+        // int n = arr.length ;
+        
+        // System.out.print("[");
+        
+        // for(int i = 0 ; i < n ; i++){
+            
+        //     for(int j = i +1 ; j < n ; j++){
+                
+        //         if(arr[i] < arr[j]){
+                    
+        //             break;
+        //         }
+                
+        //         if(j == n ){
+                    
+        //             result.add(arr[i]);
+                    
+        //         }
+        //     }
+           
+        // }
+        
+  
+        // return result;
+        
+        
+         ArrayList<Integer> result = new ArrayList<>();  // List to store leaders
+        int n = arr.length;
+
+        // Traverse the array to find leaders
+        for (int i = 0; i < n; i++) {
+            int j;
+            for (j = i + 1; j < n; j++) {
+                // If arr[j] is greater than arr[i], break out
+                if (arr[i] < arr[j]) {
+                    break;
+                }
+            }
+            // If no greater element found to the right, arr[i] is a leader
+            if (j == n) {
+                result.add(arr[i]);
+            }
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {16, 17, 4, 3, 5, 2};
+        ArrayList<Integer> result = leaders(arr);
+
+        // Print the result with square brackets as per the requirement
+        System.out.print("[");
+        for (int i = 0; i < result.size(); i++) {
+            System.out.print(result.get(i));
+            if (i < result.size() - 1) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println("]");
+        
+        
+    }
+}
